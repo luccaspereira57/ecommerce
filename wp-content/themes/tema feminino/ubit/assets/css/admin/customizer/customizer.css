@@ -1,0 +1,212 @@
+.ubit-nux .ubit-nux-button,
+a.ubit-nux-button {
+  background: #00aadc;
+  border-color: #0087be;
+  border-style: solid;
+  border-width: 1px 1px 2px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  outline: 0;
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-transform: none;
+  text-shadow: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: auto;
+  line-height: 21px;
+  border-radius: 4px;
+  margin: 0;
+  padding: 7px 14px 9px;
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: baseline;
+}
+
+.ubit-nux .ubit-nux-button:hover, .ubit-nux .ubit-nux-button:focus,
+a.ubit-nux-button:hover,
+a.ubit-nux-button:focus {
+  border-color: #005082;
+  color: white;
+}
+
+.ubit-nux .ubit-nux-button:focus,
+a.ubit-nux-button:focus {
+  box-shadow: 0 0 0 2px #78dcfa;
+}
+
+.ubit-nux .ubit-nux-button:active,
+a.ubit-nux-button:active {
+  border-width: 2px 1px 1px;
+  box-shadow: none;
+  vertical-align: baseline;
+}
+
+.ubit-nux .ubit-nux-button[disabled], .ubit-nux .ubit-nux-button:disabled,
+a.ubit-nux-button[disabled],
+a.ubit-nux-button:disabled {
+  color: white;
+  background: tint(#78dcfa, 50%);
+  border-color: tint(#0087be, 55%);
+  cursor: default;
+}
+
+.ubit-nux .ubit-nux-button[disabled]:active, .ubit-nux .ubit-nux-button:disabled:active,
+a.ubit-nux-button[disabled]:active,
+a.ubit-nux-button:disabled:active {
+  border-width: 1px 1px 2px;
+}
+
+.ubit-guided-tour {
+  display: block;
+  background-color: rgba(35, 40, 45, 0.95);
+  border-radius: 5px;
+  box-shadow: 3px 1px 5px -2px rgba(0, 0, 0, 0.145);
+  color: #a4a4a4;
+  font-size: 1.1em;
+  z-index: 999999998;
+  text-align: left;
+  box-sizing: border-box;
+  position: fixed;
+  left: 5px;
+  width: 360px;
+  transition-duration: 250ms;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+}
+
+.ubit-guided-tour::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: -14px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 14px 14px 0;
+  border-color: transparent #23282d transparent transparent;
+  border-right-color: rgba(35, 40, 45, 0.95);
+}
+
+.ubit-guided-tour .ubit-guided-tour-step {
+  padding: 30px;
+  overflow: hidden;
+}
+
+.ubit-guided-tour .ubit-guided-tour-step p {
+  font-size: 1em;
+  line-height: 1.7;
+}
+
+.ubit-guided-tour .ubit-guided-tour-step h2 {
+  margin-top: 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #fff;
+}
+
+.ubit-guided-tour .ubit-guided-tour-step .ubit-guided-tour-skip {
+  margin-left: 10px;
+  color: #00aadc;
+}
+
+.ubit-guided-tour .ubit-guided-tour-step .ubit-guided-tour-skip:hover {
+  opacity: 0.75;
+}
+
+.ubit-guided-tour:not(.ubit-first-step) .ubit-guided-tour-step a.ubit-nux-button {
+  display: none;
+}
+
+.ubit-guided-tour:not(.ubit-first-step) .ubit-guided-tour-step .ubit-guided-tour-skip {
+  display: block;
+  float: right;
+}
+
+.ubit-guided-tour.ubit-inside-section .ubit-guided-tour-step a.ubit-nux-button {
+  display: inline-block;
+}
+
+.ubit-guided-tour.ubit-inside-section .ubit-guided-tour-step .ubit-guided-tour-skip {
+  display: none;
+}
+
+.ubit-guided-tour.ubit-last-step .ubit-guided-tour-step a.ubit-nux-button {
+  display: inline-block;
+}
+
+a.ubit-nux-button {
+  vertical-align: middle;
+}
+
+a.ubit-nux-button:active {
+  vertical-align: middle;
+}
+
+.ubit-loaded {
+  opacity: 1;
+}
+
+.ubit-moving {
+  transition-duration: 250ms;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.84, 0.45, 0.68, 1.44);
+}
+
+.ubit-entering .ubit-guided-tour,
+.ubit-exiting .ubit-guided-tour {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+.ubit-entering .ubit-guided-tour {
+  animation-name: bounceInLeft;
+  -webkit-animation-name: bounceInLeft;
+}
+
+.ubit-exiting .ubit-guided-tour {
+  animation-name: bounceOutRight;
+  -webkit-animation-name: bounceOutRight;
+}
+
+@-webkit-keyframes bounceInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes bounceInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes bounceOutRight {
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+  }
+}
+
+@keyframes bounceOutRight {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
